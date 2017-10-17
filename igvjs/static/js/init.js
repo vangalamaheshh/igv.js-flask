@@ -1,7 +1,7 @@
 function initBrowser(synergist_options) {
   var div,
-          options,
-          browser;
+      options,
+      browser;
 
   div = $("#myDiv")[0];
   /*options = {
@@ -33,6 +33,6 @@ function initBrowser(synergist_options) {
               ]
   };*/
   options = synergist_options;
-	console.log(options);
+  console.log(options);
   browser = igv.createBrowser(div, options);
 }

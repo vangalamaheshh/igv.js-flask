@@ -58,11 +58,7 @@
       } else {
         var synergist_options = $('#synergist-options').data();
         console.log(synergist_options);
-        $.get("http://localhost:5000/TestJson", function( data ) {
-          console.log(data);
-          synergist_options = data;
-          initBrowser(synergist_options);
-        });
+        initBrowser(synergist_options);
       }
     });
 
