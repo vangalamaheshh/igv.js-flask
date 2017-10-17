@@ -4,6 +4,8 @@ import os
 from flask import Response, request, abort, render_template, url_for, Blueprint
 from _config import basedir
 
+import json
+
 seen_tokens = set()
 
 igvjs_blueprint = Blueprint('igvjs', __name__)
@@ -13,10 +15,19 @@ igvjs_blueprint = Blueprint('igvjs', __name__)
 def record_igvjs(setup_state):
     igvjs_blueprint.config = setup_state.app.config;
 
+@igvjs_blueprint.route('/TestJson')
+def get_json():
+   with open("/usr/local/bin/igv-flask/igvjs/static/data/public/options.json") as json_data:
+        d = json.load(json_data)
+   return json.dumps(d)
+
 # routes
 @igvjs_blueprint.route('/')
 def show_vcf():
-    return render_template('igv.html')
+    project_id = request.args.get('project_id')
+    with open("/usr/local/bin/igv-flask/igvjs/static/data/public/options.json") as json_data:
+        d = json.load(json_data)
+    return render_template('igv.html', data = json.dumps(d))
 
 @igvjs_blueprint.before_app_request
 def before_request():
