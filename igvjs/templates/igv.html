@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta id="synergist-options" data-name="{{d}}">
     <link rel="shortcut icon" href=../static/img/favicon.ico>
     <title>IGV - Integrative Genomics Viewer</title>
 
@@ -56,8 +55,7 @@
       if (uses_oauth) {
         initBrowserWithOAuth();
       } else {
-        var synergist_options = $('#synergist-options').data();
-        console.log(synergist_options);
+        var synergist_options = {{ data|safe }};
         initBrowser(synergist_options);
       }
     });

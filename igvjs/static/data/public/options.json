@@ -16,14 +16,14 @@
                       "url": "https://s3.amazonaws.com/igv.broadinstitute.org/annotations/hg19/genes/gencode.v18.annotation.sorted.gtf.gz",
                       "indexURL": "https://s3.amazonaws.com/igv.broadinstitute.org/annotations/hg19/genes/gencode.v18.annotation.sorted.gtf.gz.tbi",
                       "visibilityWindow": 10000000,
-                      "order": 1,
+                      "order": 0,
                       "displayMode": "EXPANDED"
                   },
                   {
                       "url": "static/data/public/gstt1_sample.bam",
                       "name": "GSTT1 Alignments",
                       "height": 200,
-                      "order": 2
+                      "order": 1
                   }
               ]
 }
