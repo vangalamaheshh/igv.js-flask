@@ -1,7 +1,7 @@
 {
       "reference": {
           "id": "hg19",
-          "fastaURL": "https://s3.amazonaws.com/igv.broadinstitute.org/genomes/seq/1kg_v37/human_g1k_v37_decoy.fasta",
+          "fastaURL": "/mnt/igv-data/human/b37/fasta/b37.fasta",
           "cytobandURL": "https://s3.amazonaws.com/igv.broadinstitute.org/genomes/seq/b37/b37_cytoband.txt"
       },
       "locus": "22:24,375,771-24,376,878",
