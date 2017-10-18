@@ -26,22 +26,50 @@
                       "order": 1
                   },
                   {
+                      "url": "static/data/public/igv-data/variants/2A1.vcf",
+                      "name": "2A1",
+                      "height": 200,
+                      "order": 2,
+                      "type": "variant"
+                  },
+                  {
                       "url": "static/data/public/igv-data/bams/2A2.sorted.bam",
                       "name": "2A2",
                       "height": 200,
-                      "order": 2
-                  }, 
+                      "order": 3
+                  },
+                  {
+                      "url": "static/data/public/igv-data/variants/2A2.vcf",
+                      "name": "2A2",
+                      "height": 200,
+                      "order": 4,
+                      "type": "variant"
+                  },
                   {
                       "url": "static/data/public/igv-data/bams/2L1.sorted.bam",
                       "name": "2L1",
                       "height": 200,
-                      "order": 3
+                      "order": 5
+                  },
+                  {
+                      "url": "static/data/public/igv-data/variants/2L1.vcf",
+                      "name": "2L1",
+                      "height": 200,
+                      "order": 6,
+                      "type": "variant"
                   }, 
                   {
                       "url": "static/data/public/igv-data/bams/2L2.sorted.bam",
                       "name": "2L2",
                       "height": 200,
-                      "order": 4
+                      "order": 7
+                  },
+                  {
+                      "url": "static/data/public/igv-data/variants/2L2.vcf",
+                      "name": "2L2",
+                      "height": 200,
+                      "order": 8,
+                      "type": "variant"
                   }
               ]
 }
