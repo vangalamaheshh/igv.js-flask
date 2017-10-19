@@ -18,7 +18,7 @@ def prepare_variant_calling_data(data):
     with open("/usr/local/bin/igv-flask/igvjs/static/data/public/igv-data/config/ref/human.config.json") as fh:
       json_data = json.load(fh)
     json_data = prepare_variant_json(json_data, data)
-    with open("/usr/local/bin/igv-flask/igvjs/static/data/public/igv-data/config/" + data["pipeline_name"] +
+    with open("/usr/local/bin/igv-flask/igvjs/static/data/public/igv-data/config/" + data["pipeline_name"] + \
                 "/" + data["project_id"] + ".json", "w") as ofh:
       json.dump(json_data, ofh)
   else:

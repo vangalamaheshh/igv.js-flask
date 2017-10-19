@@ -21,8 +21,8 @@ def record_igvjs(setup_state):
 def show_vcf():
     project_id = request.args.get('project_id')
     pipeline_name = request.args.get('pipeline_name')
-    config_file = "/usr/local/bin/igv-flask/igvjs/static/data/public" +
-                    "/igv-data/config/" + pipeline_name + "/" + project_id + ".json"
+    config_file = "/usr/local/bin/igv-flask/igvjs/static/data/public" + \
+      "/igv-data/config/" + pipeline_name + "/" + project_id + ".json"
     with open(config_file) as json_data:
         d = json.load(json_data)
     return render_template('igv.html', data = json.dumps(d))
@@ -31,7 +31,7 @@ def show_vcf():
 @igvjs_blueprint.route('/PrepareData', methods = ['POST'])
 def prepare_data():
     data = request.get_json(force = True)
-    project_json = "/usr/local/bin/igv-flask/igvjs/static/data/public/igv-data/config/" +
+    project_json = "/usr/local/bin/igv-flask/igvjs/static/data/public/igv-data/config/" + \
           data["pipeline_name"] + "/" + data["project_id"] + ".json"
     err = None
     if not os.path.exists(project_json):
