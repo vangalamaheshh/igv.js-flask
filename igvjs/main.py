@@ -5,7 +5,10 @@ from flask import Response, request, abort, render_template, url_for, Blueprint
 from _config import basedir
 
 import json
-from modules.prepare_data import prepare_data
+import sys
+
+sys.path.insert(0, "/usr/local/bin/igv-flask/igvjs/modules")
+from prepare_data import prepare_data
 
 seen_tokens = set()
 
