@@ -32,8 +32,8 @@ def show_vcf():
 
 
 @igvjs_blueprint.route('/PrepareData', methods = ['POST'])
-def prepare_data(self):
-    data = request.get_json(force = True)
+def prepare_data():
+    data = request.json(force = True)
     project_json = "/usr/local/bin/igv-flask/igvjs/static/data/public/igv-data/config/" + \
           data["pipeline_name"] + "/" + data["project_id"] + ".json"
     err = None
