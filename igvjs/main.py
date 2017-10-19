@@ -34,12 +34,11 @@ def show_vcf():
 @igvjs_blueprint.route('/PrepareData', methods = ['POST'])
 def prepare_data():
     data = request.get_json(force = True)
-    print(data)
     project_json = "/usr/local/bin/igv-flask/igvjs/static/data/public/igv-data/config/" + \
           data["pipeline_name"] + "/" + data["project_id"] + ".json"
     err = None
     if not os.path.exists(project_json):
-      err = prepare_date.prepare_data(data)
+      err = prepare_data.prepare_data(data)
     if err:
         return json.dumps({
             "error": err,
