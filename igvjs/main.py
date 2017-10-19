@@ -5,6 +5,7 @@ from flask import Response, request, abort, render_template, url_for, Blueprint
 from _config import basedir
 
 import json
+from modules.prepare_data import prepare_data
 
 seen_tokens = set()
 
@@ -19,9 +20,33 @@ def record_igvjs(setup_state):
 @igvjs_blueprint.route('/')
 def show_vcf():
     project_id = request.args.get('project_id')
-    with open("/usr/local/bin/igv-flask/igvjs/static/data/public/options.json") as json_data:
+    pipeline_name = request.args.get('pipeline_name')
+    config_file = "/usr/local/bin/igv-flask/igvjs/static/data/public" +
+                    "/igv-data/config/" + pipeline_name + "/" + project_id + ".json"
+    with open(config_file) as json_data:
         d = json.load(json_data)
     return render_template('igv.html', data = json.dumps(d))
+
+
+@igvjs_blueprint.route('/PrepareData', methods = ['POST'])
+def prepare_data():
+    data = request.get_json(force = True)
+    project_json = "/usr/local/bin/igv-flask/igvjs/static/data/public/igv-data/config/" +
+          data["pipeline_name"] + "/" + data["project_id"] + ".json"
+    err = None
+    if not os.path.exists(project_json):
+      err = prepare_data(data)
+    if err:
+        return json.dumps({
+            "error": err,
+            "message": err
+        }), 500
+    else:
+        return json.dumps({
+            "error": err,
+            "message": "Success"
+        }), 200
+    
 
 @igvjs_blueprint.before_app_request
 def before_request():
