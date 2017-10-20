@@ -32,7 +32,7 @@ def prepare_variant_json(json_data, data):
     sample_name = data["sample_names"][index]
     bam_track = {
       "url": "static/data/public/igv-data/variant-calling/bams/" + sample_id + ".sorted.bam",
-      "name": sample_name,
+      "name": sample_name + " [aln]",
       "height": 200,
       "order": track_number,
       "type": "alignment"
@@ -40,7 +40,7 @@ def prepare_variant_json(json_data, data):
     track_number += 1
     vcf_track = {
       "url": "static/data/public/igv-data/variant-calling/vcfs/" + sample_id + ".vcf",
-      "name": sample_name,
+      "name": sample_name + " [vt]",
       "height": 200,
       "order": track_number,
       "type": "variant"
