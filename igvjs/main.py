@@ -8,7 +8,7 @@ import json
 import sys
 
 sys.path.insert(0, "/usr/local/bin/igv-flask/igvjs/modules")
-import prepare_data
+from prepare_data import prepare_data as prep_data
 
 seen_tokens = set()
 
@@ -38,7 +38,7 @@ def prepare_data():
           data["pipeline_name"] + "/" + data["project_id"] + ".json"
     err = None
     if not os.path.exists(project_json):
-      err = prepare_data.prepare_data(data)
+      err = prep_data(data)
     if err:
         return json.dumps({
             "error": err,

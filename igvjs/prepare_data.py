@@ -53,7 +53,7 @@ def prepare_variant_json(json_data, data):
 
 def download_variant_calling_data(data):
   try:
-    command = "bash /usr/local/bin/igv-flask/igvjs/modules/fetch_data.bash"
+    command = "bash /usr/local/bin/igv-flask/igvjs/fetch_data.bash"
     args = '"' + data["project_id"] + '"' + " " + '"' + data["pipeline_name"] + '"' + " " + '"' + data["workspace"] + '"'
     command_out = subprocess.check_output(command + " " + args, shell = True, stderr = subprocess.STDOUT).decode('utf-8').strip()
   except subprocess.CalledProcessError:
