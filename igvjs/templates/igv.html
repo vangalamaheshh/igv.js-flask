@@ -8,7 +8,11 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href=../static/img/favicon.ico>
     <title>IGV - Integrative Genomics Viewer</title>
-
+    <style>
+    body{
+      margin:0;
+    }
+    </style>
     <!-- jQuery UI CSS -->
     <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css"/>
 
@@ -39,7 +43,7 @@
 
 <body>
 
-<div id="myDiv" style="padding-top: 50px;padding-bottom: 20px; height: auto">
+<div id="myDiv">
 
     {% if config.USES_OAUTH %}
     <button id="signinbutton" disabled='disabled' onclick="handleSignInClick()">Authorize</button>
